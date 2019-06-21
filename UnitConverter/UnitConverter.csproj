@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,8 +7,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>UnitConverter</RootNamespace>
     <AssemblyName>UnitConverter</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -18,6 +17,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
@@ -28,9 +28,10 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="WindowsFrontEnd.resx">
-      <DependentUpon>WindowsFrontEnd.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Resources\" />
+    <Folder Include="Interactables\" />
+    <Folder Include="Resources\Classes\" />
+    <Folder Include="Resources\Definitions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interactables\DomainLogic.cs" />
@@ -39,22 +40,6 @@
     <Compile Include="Resources\Definitions\QuantityDefinitions.cs" />
     <Compile Include="Resources\Classes\UnitManipulators.cs" />
     <Compile Include="Resources\Classes\CalculationHandler.cs" />
-    <Compile Include="WindowsFrontEnd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WindowsFrontEnd.Designer.cs">
-      <DependentUpon>WindowsFrontEnd.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

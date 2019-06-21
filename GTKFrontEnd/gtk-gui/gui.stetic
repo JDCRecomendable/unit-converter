@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="../bin/Debug/GTKFrontEnd.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="772 264">
+    <action-group name="Default">
+      <action id="FileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_File</property>
+        <property name="ShortLabel" translatable="yes">_File</property>
+      </action>
+      <action id="QuitAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Mod2&gt;q</property>
+        <property name="Label" translatable="yes">_Quit</property>
+        <property name="ShortLabel" translatable="yes">_Quit</property>
+        <signal name="Activated" handler="QuitSelected" />
+      </action>
+      <action id="PreferencesAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Preferences</property>
+        <property name="ShortLabel" translatable="yes">_Preferences</property>
+      </action>
+      <action id="NoRoundingOffAction">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;n</property>
+        <property name="Label" translatable="yes">_No Rounding Off</property>
+        <property name="ShortLabel" translatable="yes">_No Rounding Off</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="NoRoundingOffSelected" />
+      </action>
+      <action id="WholeNumberAction">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;w</property>
+        <property name="Label" translatable="yes">_Whole Number</property>
+        <property name="ShortLabel" translatable="yes">_Whole Number</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="WholeNumberSelected" />
+      </action>
+      <action id="DecimalPlaceAction1">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;1</property>
+        <property name="Label" translatable="yes">_1 Decimal Place</property>
+        <property name="ShortLabel" translatable="yes">_1 Decimal Place</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP1Selected" />
+      </action>
+      <action id="DecimalPlacesAction2">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;2</property>
+        <property name="Label" translatable="yes">_2 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">_2 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP2Selected" />
+      </action>
+      <action id="DecimalPlacesAction3">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;3</property>
+        <property name="Label" translatable="yes">_3 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">_3 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP3Selected" />
+      </action>
+      <action id="DecimalPlacesAction4">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;4</property>
+        <property name="Label" translatable="yes">_4 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">_4 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP4Selected" />
+      </action>
+      <action id="DecimalPlacesAction5">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;5</property>
+        <property name="Label" translatable="yes">_5 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">_5 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP5Selected" />
+      </action>
+      <action id="DecimalPlacesAction6">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;6</property>
+        <property name="Label" translatable="yes">_6 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">_6 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP6Selected" />
+      </action>
+      <action id="DecimalPlacesAction7">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;7</property>
+        <property name="Label" translatable="yes">_7 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">_7 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP7Selected" />
+      </action>
+      <action id="DecimalPlacesAction8">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;8</property>
+        <property name="Label" translatable="yes">_8 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">_8 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP8Selected" />
+      </action>
+      <action id="DecimalPlacesAction9">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;9</property>
+        <property name="Label" translatable="yes">_9 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">_9 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP9Selected" />
+      </action>
+      <action id="DecimalPlacesAction10">
+        <property name="Type">Radio</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;&lt;Mod2&gt;0</property>
+        <property name="Label" translatable="yes">1_0 Decimal Places</property>
+        <property name="ShortLabel" translatable="yes">1_0 Decimal Places</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+        <signal name="Activated" handler="DP10Selected" />
+      </action>
+      <action id="AboutAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_About</property>
+        <property name="ShortLabel" translatable="yes">_About</property>
+      </action>
+      <action id="AboutUnitConverterAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">About _Unit Converter</property>
+        <property name="ShortLabel" translatable="yes">About _Unit Converter</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">Unit Converter</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.VBox" id="MainArea">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="MenuBar">
+            <property name="MemberName" />
+            <node name="MenuBar" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="QuitAction" />
+              </node>
+              <node type="Menu" action="PreferencesAction">
+                <node type="Menuitem" action="NoRoundingOffAction" />
+                <node type="Menuitem" action="WholeNumberAction" />
+                <node type="Menuitem" action="DecimalPlaceAction1" />
+                <node type="Menuitem" action="DecimalPlacesAction2" />
+                <node type="Menuitem" action="DecimalPlacesAction3" />
+                <node type="Menuitem" action="DecimalPlacesAction4" />
+                <node type="Menuitem" action="DecimalPlacesAction5" />
+                <node type="Menuitem" action="DecimalPlacesAction6" />
+                <node type="Menuitem" action="DecimalPlacesAction7" />
+                <node type="Menuitem" action="DecimalPlacesAction8" />
+                <node type="Menuitem" action="DecimalPlacesAction9" />
+                <node type="Menuitem" action="DecimalPlacesAction10" />
+              </node>
+              <node type="Menu" action="AboutAction">
+                <node type="Menuitem" action="AboutUnitConverterAction" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="MainConversionArea">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                <property name="MemberName" />
+                <property name="WidthRequest">120</property>
+                <property name="HeightRequest">208</property>
+                <property name="HscrollbarPolicy">Never</property>
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.Viewport" id="GtkViewport">
+                    <property name="MemberName" />
+                    <property name="ShadowType">None</property>
+                    <child>
+                      <widget class="Gtk.VButtonBox" id="QuantityPicker">
+                        <property name="MemberName" />
+                        <property name="ShowScrollbars">True</property>
+                        <property name="Homogeneous">True</property>
+                        <property name="Size">16</property>
+                        <child>
+                          <widget class="Gtk.Button" id="LengthSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Length</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="LengthButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="AreaSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Area</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="AreaButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">1</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="VolumeSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Volume</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="VolumeButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">2</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="TimeSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Time</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="TimeButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">3</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="SpeedSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Speed</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="SpeedButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">4</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="FlowAreaSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Flow Area</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="FlowAreaButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">5</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="FlowVolumeSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Flow Volume</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="FlowVolumeButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">6</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="FlowMassSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Flow Mass</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="FlowMassButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">7</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="MassSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Mass</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="MassButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">8</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="EnergySelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Energy</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="EnergyButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">9</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="PressureSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Pressure</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="PressureButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">10</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="TemperatureSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Temperature</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="TemperatureButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">11</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="LuminanceSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Luminance</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="LuminanceButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">12</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="IlluminanceSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Illuminance</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="IlluminanceButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">13</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="AngleSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Angle</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="AngleButtonClicked" />
+                          </widget>
+                          <packing>
+                            <property name="Position">14</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Button" id="DataSizeSelector">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Type">TextOnly</property>
+                            <property name="Label" translatable="yes">Data Size</property>
+                            <property name="UseUnderline">True</property>
+                            <signal name="Clicked" handler="DataSizeClick" />
+                          </widget>
+                          <packing>
+                            <property name="Position">15</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.VBox" id="ConversionAreaA">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.ComboBox" id="FromUnitPicker">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">320</property>
+                    <property name="IsTextCombo">True</property>
+                    <property name="Items" translatable="yes" />
+                    <signal name="Changed" handler="InputBoxSelectedChanged" />
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="InputBox">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">•</property>
+                    <signal name="TextInserted" handler="InputTextInserted" />
+                    <signal name="TextDeleted" handler="InputTextDeleted" />
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="ClearButton">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">_Clear</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="ClearButtonClicked" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.VBox" id="ConversionAreaB">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.ComboBox" id="ToUnitPicker">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">320</property>
+                    <property name="IsTextCombo">True</property>
+                    <property name="Items" translatable="yes" />
+                    <signal name="Changed" handler="OutputBoxSelectedChanged" />
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="OutputBox">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">False</property>
+                    <property name="InvisibleChar">•</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="SwapButton">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">_Swap</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="SwapButtonClicked" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Statusbar" id="StatusBar">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <placeholder />
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitConverter", "UnitConverter\UnitConverter.csproj", "{66AD5148-4430-49E6-93A2-A7B45918B5BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTKFrontEnd", "GTKFrontEnd\GTKFrontEnd.csproj", "{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Debug|x86.Build.0 = Debug|x86
 		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Release|x86.ActiveCfg = Release|x86
 		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Release|x86.Build.0 = Release|x86
+		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Debug|x86.ActiveCfg = Debug|x86
+		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Debug|x86.Build.0 = Debug|x86
+		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Release|x86.ActiveCfg = Release|x86
+		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
