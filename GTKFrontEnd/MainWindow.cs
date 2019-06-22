@@ -17,6 +17,8 @@ public partial class MainWindow : Gtk.Window
     public void Initialise()
     {
         SetComboBoxText(QuantityIndex.length);
+        SetSelectedQuantityIndex(QuantityIndex.length);
+        ClearAll();
     }
 
     protected int GetSelectedQuantityIndex()
@@ -65,96 +67,112 @@ public partial class MainWindow : Gtk.Window
     {
         SetComboBoxText(QuantityIndex.length);
         SetSelectedQuantityIndex(QuantityIndex.length);
+        ClearAll();
     }
 
     protected void AreaButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.area);
         SetSelectedQuantityIndex(QuantityIndex.area);
+        ClearAll();
     }
 
     protected void VolumeButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.volume);
         SetSelectedQuantityIndex(QuantityIndex.volume);
+        ClearAll();
     }
 
     protected void TimeButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.time);
         SetSelectedQuantityIndex(QuantityIndex.time);
+        ClearAll();
     }
 
     protected void SpeedButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.speed);
         SetSelectedQuantityIndex(QuantityIndex.speed);
+        ClearAll();
     }
 
     protected void FlowAreaButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.flowArea);
         SetSelectedQuantityIndex(QuantityIndex.flowArea);
+        ClearAll();
     }
 
     protected void FlowVolumeButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.flowVolume);
         SetSelectedQuantityIndex(QuantityIndex.flowVolume);
+        ClearAll();
     }
 
     protected void FlowMassButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.flowMass);
         SetSelectedQuantityIndex(QuantityIndex.flowMass);
+        ClearAll();
     }
 
     protected void MassButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.mass);
         SetSelectedQuantityIndex(QuantityIndex.mass);
+        ClearAll();
     }
 
     protected void EnergyButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.energy);
         SetSelectedQuantityIndex(QuantityIndex.energy);
+        ClearAll();
     }
 
     protected void PressureButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.pressure);
         SetSelectedQuantityIndex(QuantityIndex.pressure);
+        ClearAll();
     }
 
     protected void TemperatureButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.temperature);
         SetSelectedQuantityIndex(QuantityIndex.temperature);
+        ClearAll();
     }
 
     protected void LuminanceButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.luminance);
         SetSelectedQuantityIndex(QuantityIndex.luminance);
+        ClearAll();
     }
 
     protected void IlluminanceButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.illuminance);
         SetSelectedQuantityIndex(QuantityIndex.illuminance);
+        ClearAll();
     }
 
     protected void AngleButtonClicked(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.angle);
         SetSelectedQuantityIndex(QuantityIndex.angle);
+        ClearAll();
     }
 
     protected void DataSizeClick(object sender, System.EventArgs e)
     {
         SetComboBoxText(QuantityIndex.dataSize);
         SetSelectedQuantityIndex(QuantityIndex.dataSize);
+        ClearAll();
     }
 
     protected void Calculate()
@@ -194,12 +212,17 @@ public partial class MainWindow : Gtk.Window
         Environment.Exit(0);
     }
 
-    protected void ClearButtonClicked(object sender, EventArgs e)
+    protected void ClearAll()
     {
-        FromUnitPicker.Active = -1;
-        ToUnitPicker.Active = -1;
+        FromUnitPicker.Active = 0;
+        ToUnitPicker.Active = 1;
         InputBox.Text = "";
         OutputBox.Text = "";
+    }
+
+    protected void ClearButtonClicked(object sender, EventArgs e)
+    {
+        ClearAll();
     }
 
     protected void SwapButtonClicked(object sender, EventArgs e)
