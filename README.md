@@ -5,7 +5,7 @@ https://github.com/JDCRecomendable/unit-converter-old
 ## Features
 * Core
 * GTK# Front-End for GNU/Linux
+* WinForms for Windows
 
 ## Proposed Features
-* WinForms for Windows
 * Cocoa for macOS

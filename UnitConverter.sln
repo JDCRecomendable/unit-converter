@@ -1,35 +1,57 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitConverter", "UnitConverter\UnitConverter.csproj", "{66AD5148-4430-49E6-93A2-A7B45918B5BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTKFrontEnd", "GTKFrontEnd\GTKFrontEnd.csproj", "{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsFrontEnd", "WinFormsFrontEnd\WinFormsFrontEnd.csproj", "{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Debug|x86.ActiveCfg = Debug|x86
 		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Debug|x86.Build.0 = Debug|x86
+		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Release|Any CPU.ActiveCfg = Release|x86
 		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Release|x86.ActiveCfg = Release|x86
 		{66AD5148-4430-49E6-93A2-A7B45918B5BB}.Release|x86.Build.0 = Release|x86
+		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Debug|x86.ActiveCfg = Debug|x86
 		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Debug|x86.Build.0 = Debug|x86
+		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Release|Any CPU.ActiveCfg = Release|x86
 		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Release|x86.ActiveCfg = Release|x86
 		{CE6B4AD8-36D0-4C36-95E4-27D9B78DD17E}.Release|x86.Build.0 = Release|x86
+		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Debug|x86.Build.0 = Debug|Any CPU
+		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CF74D41-6776-434E-8FA1-73E46761D350}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
-		$0.TextStylePolicy = $2
+		$0.TextStylePolicy = $4
 		$2.inheritsSet = null
 		$2.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $3
 		$3.scope = text/x-csharp
-		$0.TextStylePolicy = $4
 		$4.FileWidth = 80
 		$4.TabsToSpaces = True
 		$4.scope = text/plain
