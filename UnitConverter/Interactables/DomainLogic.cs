@@ -31,9 +31,9 @@ namespace UnitConverter
             return calculationHandler.Calculate(value, fromUnit, toUnit);
         }
 
-        public void GetRoundOffValue()
+        public short GetRoundOffValue()
         {
-            calculationHandler.GetRoundOffValue();
+            return calculationHandler.GetRoundOffValue();
         }
 
         public void SetRoundOffValue(short value)
