@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTKFrontEnd", "GTKFrontEnd\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsFrontEnd", "WinFormsFrontEnd\WinFormsFrontEnd.csproj", "{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocoaFrontEnd", "CocoaFrontEnd\CocoaFrontEnd.csproj", "{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,14 @@ Global
 		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Release|x86.ActiveCfg = Release|Any CPU
 		{55FB89A9-2C34-4DDB-B419-98A62A1A0AA7}.Release|x86.Build.0 = Release|Any CPU
+		{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}.Debug|x86.Build.0 = Debug|Any CPU
+		{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}.Release|x86.ActiveCfg = Release|Any CPU
+		{0796FF2D-3BBF-4C71-A3D0-DC2E98DB511C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,13 +58,5 @@ Global
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
 		$0.TextStylePolicy = $4
-		$2.inheritsSet = null
-		$2.scope = text/x-csharp
-		$0.CSharpFormattingPolicy = $3
-		$3.scope = text/x-csharp
-		$4.FileWidth = 80
-		$4.TabsToSpaces = True
-		$4.scope = text/plain
-		$0.StandardHeader = $5
 	EndGlobalSection
 EndGlobal
