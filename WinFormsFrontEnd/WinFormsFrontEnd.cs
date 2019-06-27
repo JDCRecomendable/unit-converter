@@ -72,6 +72,7 @@ namespace UnitConverter
         {
             SetQuantitySelected(QuantityPicker.SelectedIndex);
             UpdateComboBoxes();
+            ClearAll();
         }
 
         private void Calculate()
@@ -98,10 +99,14 @@ namespace UnitConverter
             Calculate();
         }
 
+        private void ClearAll()
+        {
+            InputBox.Text = "";
+        }
+
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            UpdateComboBoxes();
-            InputBox.Text = "";
+            ClearAll();
         }
 
         private void SwapButton_Click(object sender, EventArgs e)
@@ -210,6 +215,14 @@ namespace UnitConverter
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void aboutUnitConverterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutUnitConverter aboutUnitConverter = new AboutUnitConverter();
+            if (this.TopMost)
+                aboutUnitConverter.TopMost = true;
+            aboutUnitConverter.Show();
         }
     }
 }

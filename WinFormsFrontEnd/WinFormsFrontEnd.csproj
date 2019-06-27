@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUnitConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUnitConverter.Designer.cs">
+      <DependentUpon>AboutUnitConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewUnit.Designer.cs">
+      <DependentUpon>AddNewUnit.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinFormsFrontEnd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +67,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutUnitConverter.resx">
+      <DependentUpon>AboutUnitConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewUnit.resx">
+      <DependentUpon>AddNewUnit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinFormsFrontEnd.resx">
       <DependentUpon>WinFormsFrontEnd.cs</DependentUpon>
     </EmbeddedResource>

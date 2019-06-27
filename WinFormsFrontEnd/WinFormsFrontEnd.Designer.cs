@@ -36,7 +36,7 @@
             this.InputBox = new System.Windows.Forms.TextBox();
             this.OutputBox = new System.Windows.Forms.TextBox();
             this.ClearButton = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MainBoxMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +57,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.GlobalArea = new System.Windows.Forms.TableLayoutPanel();
             this.MainArea.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.MainBoxMenuStrip.SuspendLayout();
             this.GlobalArea.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,17 +176,17 @@
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // menuStrip1
+            // MainBoxMenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainBoxMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.optionsToolStripMenuItem,
             this.aboutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(464, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MainBoxMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MainBoxMenuStrip.Name = "MainBoxMenuStrip";
+            this.MainBoxMenuStrip.Size = new System.Drawing.Size(464, 24);
+            this.MainBoxMenuStrip.TabIndex = 1;
+            this.MainBoxMenuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -200,7 +200,7 @@
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -346,6 +346,7 @@
             this.aboutUnitConverterToolStripMenuItem.Name = "aboutUnitConverterToolStripMenuItem";
             this.aboutUnitConverterToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.aboutUnitConverterToolStripMenuItem.Text = "&About Unit Converter";
+            this.aboutUnitConverterToolStripMenuItem.Click += new System.EventHandler(this.aboutUnitConverterToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -376,14 +377,16 @@
             this.ClientSize = new System.Drawing.Size(464, 201);
             this.Controls.Add(this.GlobalArea);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.MainBoxMenuStrip);
+            this.MainMenuStrip = this.MainBoxMenuStrip;
+            this.MaximumSize = new System.Drawing.Size(720, 400);
+            this.MinimumSize = new System.Drawing.Size(480, 240);
             this.Name = "WinFormsFrontEnd";
             this.Text = "Unit Converter";
             this.MainArea.ResumeLayout(false);
             this.MainArea.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MainBoxMenuStrip.ResumeLayout(false);
+            this.MainBoxMenuStrip.PerformLayout();
             this.GlobalArea.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -400,7 +403,7 @@
         private System.Windows.Forms.TextBox OutputBox;
         private System.Windows.Forms.Button SwapButton;
         private System.Windows.Forms.Button ClearButton;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MainBoxMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;

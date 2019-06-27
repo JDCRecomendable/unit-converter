@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace UnitConverter
 {
@@ -61,14 +60,18 @@ namespace UnitConverter
             return unitManipulator.GetAllUnits(quantityIndex);
         }
 
-        public void CreateAndAddUnit(int quantityIndex, string name, double gradient, double intercept)
+        public void CreateAndAddUnitWithBase(int quantityIndex, string name, double gradient, double intercept, Unit unitBase)
         {
-            AddUnit(quantityIndex, CreateUnit(name, gradient, intercept));
+            AddUnit(quantityIndex, CreateUnitWithBase(name, gradient, intercept, unitBase));
         }
 
-        public Unit CreateUnit(string name, double gradient, double intercept)
+        public Unit CreateUnitWithBase(string name, double gradient, double intercept, Unit unitBase)
         {
-            return new Unit(name, gradient, intercept);
+            double rGradient = unitBase.GetGradient();
+            double rIntercept = unitBase.GetIntercept();
+            return new Unit(name,
+                gradient * rGradient,
+                intercept * rGradient + rIntercept);
         }
 
         public void AddUnit(int quantityIndex, Unit unit)

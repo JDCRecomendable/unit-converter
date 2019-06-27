@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinFormsFrontEnd.Properties {
+namespace UnitConverter.Properties {
     using System;
     
     

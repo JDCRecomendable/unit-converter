@@ -4,7 +4,7 @@
     {
         private static readonly double pi = 3.1415926535897932384626433832795d;
 
-        public static UnitManipulator LoadAllPreDefinedUnits(UnitManipulator unitManipulator)
+        public static void LoadAllPreDefinedUnits(UnitManipulator unitManipulator)
         {
             // Length (22 units)
             unitManipulator._AddUnit(QuantityIndex.length, new Unit("Metre [m] (S.I. Unit)", 1d, 0d));
@@ -437,9 +437,6 @@
             unitManipulator._AddUnit(QuantityIndex.dataSize, new Unit("Gigabyte [GB]", 1073741824d, 0d));
             unitManipulator._AddUnit(QuantityIndex.dataSize, new Unit("Terabyte [TB]", 1099511627776d, 0d));
             unitManipulator._AddUnit(QuantityIndex.dataSize, new Unit("Petabyte [PB]", 1125899906842624d, 0d));
-
-
-            return unitManipulator;
         }
     }
 }
