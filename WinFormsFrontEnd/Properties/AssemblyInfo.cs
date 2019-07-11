@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
     "units for 16 different quantities, supporting more than 370 " +
     "units.\r\n\r\nThis program is licensed under the GNU GPLv3. This " +
     "program provides absolutely no warranty in any way and any " +
-    "form.\r\n\r\nSource code is available at:" +
+    "form.\r\n\r\nSource code is available at: " +
     "https://github.com/JDCRecomendable/unit-converter")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]

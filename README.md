@@ -47,6 +47,6 @@ mono GTKSharpFrontEnd.exe
 #### Pre-Requisites
 * .NET Framework 4.7
 
-### Running
+#### Running
 Double-click on `WinFormsFrontEnd.exe`.  
 (running `UnitConverter.exe` instead will do nothing)

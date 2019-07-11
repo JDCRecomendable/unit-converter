@@ -16,6 +16,8 @@ namespace UnitConverter
             QuantityPicker.SelectedIndex = 0;
             UpdateComboBoxes();
 
+            MainBoxMenuStrip.Renderer = new SelectorColourRenderer();
+
             roundOffMenuItems.Add(noRoundingOffToolStripMenuItem);
             roundOffMenuItems.Add(wholeNumberToolStripMenuItem);
             roundOffMenuItems.Add(decimalPlacesToolStripMenuItem1);
@@ -28,6 +30,20 @@ namespace UnitConverter
             roundOffMenuItems.Add(decimalPlacesToolStripMenuItem8);
             roundOffMenuItems.Add(decimalPlacesToolStripMenuItem9);
             roundOffMenuItems.Add(decimalPlacesToolStripMenuItem10);
+        }
+
+        private void ToggleKeepFloating()
+        {
+            if (this.TopMost)
+            {
+                this.TopMost = false;
+                keepWindowFloatingToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                this.TopMost = true;
+                keepWindowFloatingToolStripMenuItem.Checked = true;
+            }
         }
 
         private void UntickAllRoundOffMenuItems()
@@ -51,7 +67,7 @@ namespace UnitConverter
             unitConverterProgram.SetRoundOffValue(value);
         }
 
-        private void UpdateComboBoxes()
+        public void UpdateComboBoxes()
         {
             List<string> unitNames = unitConverterProgram.GetUnitsNamesForQuantity(GetQuantitySelected());
 
@@ -223,6 +239,84 @@ namespace UnitConverter
             if (this.TopMost)
                 aboutUnitConverter.TopMost = true;
             aboutUnitConverter.Show();
+        }
+
+        private void addNewUnitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewUnit addNewUnit = new AddNewUnit(this, unitConverterProgram);
+            if (this.TopMost)
+                addNewUnit.TopMost = true;
+            addNewUnit.Show();
+        }
+
+        private void keepWindowFloatingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToggleKeepFloating();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteCustomUnit deleteCustomUnit = new DeleteCustomUnit(this, unitConverterProgram);
+            if (this.TopMost)
+                deleteCustomUnit.TopMost = true;
+            deleteCustomUnit.Show();
+        }
+
+        private class SelectorColourRenderer : ToolStripProfessionalRenderer
+        {
+            public SelectorColourRenderer() : base(new SelectorColours()) { }
+        }
+
+        // MISC - For menu bar rendering
+        private class SelectorColours : ProfessionalColorTable
+        {
+            public override System.Drawing.Color MenuItemSelected
+            {
+                get
+                {
+                    return System.Drawing.Color.Gray;
+                }
+            }
+
+            public override System.Drawing.Color MenuItemBorder
+            {
+                get
+                {
+                    return System.Drawing.Color.Gray;
+                }
+            }
+
+            public override System.Drawing.Color MenuBorder
+            {
+                get
+                {
+                    return System.Drawing.Color.Gray;
+                }
+            }
+
+            public override System.Drawing.Color SeparatorDark
+            {
+                get
+                {
+                    return System.Drawing.Color.White;
+                }
+            }
+
+            public override System.Drawing.Color CheckBackground
+            {
+                get
+                {
+                    return System.Drawing.Color.White;
+                }
+            }
+
+            public override System.Drawing.Color CheckSelectedBackground
+            {
+                get
+                {
+                    return System.Drawing.Color.White;
+                }
+            }
         }
     }
 }

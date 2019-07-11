@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -59,6 +60,12 @@
     <Compile Include="AddNewUnit.Designer.cs">
       <DependentUpon>AddNewUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteCustomUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteCustomUnit.Designer.cs">
+      <DependentUpon>DeleteCustomUnit.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinFormsFrontEnd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewUnit.resx">
       <DependentUpon>AddNewUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteCustomUnit.resx">
+      <DependentUpon>DeleteCustomUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinFormsFrontEnd.resx">
       <DependentUpon>WinFormsFrontEnd.cs</DependentUpon>

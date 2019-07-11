@@ -1,4 +1,4 @@
-﻿namespace WinFormsFrontEnd
+﻿namespace UnitConverter
 {
     partial class AddNewUnit
     {
@@ -38,13 +38,13 @@
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.FootnoteLabel = new System.Windows.Forms.Label();
             this.ButtonArea = new System.Windows.Forms.TableLayoutPanel();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.AddAndCloseButton = new System.Windows.Forms.Button();
             this.CustomUnitNameInput = new System.Windows.Forms.TextBox();
             this.GradientInput = new System.Windows.Forms.TextBox();
             this.InterceptInput = new System.Windows.Forms.TextBox();
             this.BasedOnUnitDropDown = new System.Windows.Forms.ComboBox();
-            this.CloseButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.AddAndCloseButton = new System.Windows.Forms.Button();
             this.GlobalArea.SuspendLayout();
             this.MainArea.SuspendLayout();
             this.ButtonArea.SuspendLayout();
@@ -52,10 +52,12 @@
             // 
             // GlobalArea
             // 
+            this.GlobalArea.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.GlobalArea.ColumnCount = 1;
             this.GlobalArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.GlobalArea.Controls.Add(this.MainArea, 0, 0);
             this.GlobalArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GlobalArea.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.GlobalArea.Location = new System.Drawing.Point(0, 0);
             this.GlobalArea.Name = "GlobalArea";
             this.GlobalArea.RowCount = 1;
@@ -98,7 +100,10 @@
             // 
             // QuantityPicker
             // 
+            this.QuantityPicker.BackColor = System.Drawing.Color.Gray;
+            this.QuantityPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.QuantityPicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QuantityPicker.ForeColor = System.Drawing.SystemColors.Window;
             this.QuantityPicker.FormattingEnabled = true;
             this.QuantityPicker.Items.AddRange(new object[] {
             "Length",
@@ -122,6 +127,7 @@
             this.MainArea.SetRowSpan(this.QuantityPicker, 7);
             this.QuantityPicker.Size = new System.Drawing.Size(146, 269);
             this.QuantityPicker.TabIndex = 0;
+            this.QuantityPicker.SelectedIndexChanged += new System.EventHandler(this.QuantityPicker_SelectedIndexChanged);
             // 
             // CustomUnitNameLabel
             // 
@@ -208,85 +214,120 @@
             this.ButtonArea.Name = "ButtonArea";
             this.ButtonArea.RowCount = 1;
             this.ButtonArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ButtonArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ButtonArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.ButtonArea.Size = new System.Drawing.Size(300, 36);
             this.ButtonArea.TabIndex = 7;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.BackColor = System.Drawing.Color.Gray;
+            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CloseButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.Location = new System.Drawing.Point(3, 3);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(94, 30);
+            this.CloseButton.TabIndex = 0;
+            this.CloseButton.TabStop = false;
+            this.CloseButton.Text = "&Close";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.BackColor = System.Drawing.Color.Gray;
+            this.AddButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.Location = new System.Drawing.Point(103, 3);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(94, 30);
+            this.AddButton.TabIndex = 5;
+            this.AddButton.Text = "&Add";
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // AddAndCloseButton
+            // 
+            this.AddAndCloseButton.BackColor = System.Drawing.Color.Gray;
+            this.AddAndCloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddAndCloseButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddAndCloseButton.FlatAppearance.BorderSize = 0;
+            this.AddAndCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddAndCloseButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddAndCloseButton.Location = new System.Drawing.Point(203, 3);
+            this.AddAndCloseButton.Name = "AddAndCloseButton";
+            this.AddAndCloseButton.Size = new System.Drawing.Size(94, 30);
+            this.AddAndCloseButton.TabIndex = 6;
+            this.AddAndCloseButton.Text = "A&dd and Close";
+            this.AddAndCloseButton.UseVisualStyleBackColor = false;
+            this.AddAndCloseButton.Click += new System.EventHandler(this.AddAndCloseButton_Click);
             // 
             // CustomUnitNameInput
             // 
             this.CustomUnitNameInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CustomUnitNameInput.BackColor = System.Drawing.Color.Gray;
+            this.CustomUnitNameInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CustomUnitNameInput.ForeColor = System.Drawing.SystemColors.Window;
             this.CustomUnitNameInput.Location = new System.Drawing.Point(307, 6);
             this.CustomUnitNameInput.Name = "CustomUnitNameInput";
             this.CustomUnitNameInput.Size = new System.Drawing.Size(148, 20);
-            this.CustomUnitNameInput.TabIndex = 8;
+            this.CustomUnitNameInput.TabIndex = 1;
             // 
             // GradientInput
             // 
             this.GradientInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.GradientInput.BackColor = System.Drawing.Color.Gray;
+            this.GradientInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GradientInput.ForeColor = System.Drawing.SystemColors.Window;
             this.GradientInput.Location = new System.Drawing.Point(307, 140);
             this.GradientInput.Name = "GradientInput";
             this.GradientInput.Size = new System.Drawing.Size(148, 20);
-            this.GradientInput.TabIndex = 9;
+            this.GradientInput.TabIndex = 3;
             // 
             // InterceptInput
             // 
             this.InterceptInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.InterceptInput.BackColor = System.Drawing.Color.Gray;
+            this.InterceptInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InterceptInput.ForeColor = System.Drawing.SystemColors.Window;
             this.InterceptInput.Location = new System.Drawing.Point(307, 173);
             this.InterceptInput.Name = "InterceptInput";
             this.InterceptInput.Size = new System.Drawing.Size(148, 20);
-            this.InterceptInput.TabIndex = 10;
+            this.InterceptInput.TabIndex = 4;
             // 
             // BasedOnUnitDropDown
             // 
             this.BasedOnUnitDropDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BasedOnUnitDropDown.BackColor = System.Drawing.Color.Gray;
+            this.BasedOnUnitDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BasedOnUnitDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BasedOnUnitDropDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BasedOnUnitDropDown.ForeColor = System.Drawing.SystemColors.Window;
             this.BasedOnUnitDropDown.FormattingEnabled = true;
-            this.BasedOnUnitDropDown.Location = new System.Drawing.Point(307, 36);
+            this.BasedOnUnitDropDown.Location = new System.Drawing.Point(307, 39);
             this.BasedOnUnitDropDown.Name = "BasedOnUnitDropDown";
             this.BasedOnUnitDropDown.Size = new System.Drawing.Size(148, 21);
-            this.BasedOnUnitDropDown.TabIndex = 11;
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CloseButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.Location = new System.Drawing.Point(3, 3);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(93, 30);
-            this.CloseButton.TabIndex = 0;
-            this.CloseButton.Text = "&Close";
-            this.CloseButton.UseVisualStyleBackColor = true;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButton.Location = new System.Drawing.Point(102, 3);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(93, 30);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.Text = "&Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            // 
-            // AddAndCloseButton
-            // 
-            this.AddAndCloseButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddAndCloseButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddAndCloseButton.Location = new System.Drawing.Point(201, 3);
-            this.AddAndCloseButton.Name = "AddAndCloseButton";
-            this.AddAndCloseButton.Size = new System.Drawing.Size(96, 30);
-            this.AddAndCloseButton.TabIndex = 2;
-            this.AddAndCloseButton.Text = "A&dd and Close";
-            this.AddAndCloseButton.UseVisualStyleBackColor = true;
+            this.BasedOnUnitDropDown.TabIndex = 2;
             // 
             // AddNewUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CloseButton;
             this.ClientSize = new System.Drawing.Size(464, 281);
+            this.ControlBox = false;
             this.Controls.Add(this.GlobalArea);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddNewUnit";
-            this.Text = "AddNewUnit";
+            this.Text = "Add Custom Unit";
             this.GlobalArea.ResumeLayout(false);
             this.MainArea.ResumeLayout(false);
             this.MainArea.PerformLayout();

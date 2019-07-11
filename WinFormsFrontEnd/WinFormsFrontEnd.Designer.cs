@@ -38,8 +38,12 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.MainBoxMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewUnitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keepWindowFloatingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.separatorToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.noRoundingOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wholeNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decimalPlacesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,19 +90,28 @@
             // 
             // SwapButton
             // 
+            this.SwapButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.SwapButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SwapButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SwapButton.FlatAppearance.BorderSize = 0;
+            this.SwapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SwapButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SwapButton.Location = new System.Drawing.Point(307, 121);
+            this.SwapButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SwapButton.Location = new System.Drawing.Point(308, 122);
+            this.SwapButton.Margin = new System.Windows.Forms.Padding(4);
             this.SwapButton.Name = "SwapButton";
-            this.SwapButton.Size = new System.Drawing.Size(148, 25);
+            this.SwapButton.Size = new System.Drawing.Size(146, 23);
             this.SwapButton.TabIndex = 6;
             this.SwapButton.Text = "&Swap";
-            this.SwapButton.UseVisualStyleBackColor = true;
+            this.SwapButton.UseVisualStyleBackColor = false;
             this.SwapButton.Click += new System.EventHandler(this.SwapButton_Click);
             // 
             // QuantityPicker
             // 
+            this.QuantityPicker.BackColor = System.Drawing.Color.Gray;
+            this.QuantityPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.QuantityPicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QuantityPicker.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.QuantityPicker.FormattingEnabled = true;
             this.QuantityPicker.Items.AddRange(new object[] {
             "Length",
@@ -126,7 +139,10 @@
             // 
             // FromUnitPicker
             // 
+            this.FromUnitPicker.BackColor = System.Drawing.Color.Gray;
+            this.FromUnitPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FromUnitPicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FromUnitPicker.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FromUnitPicker.FormattingEnabled = true;
             this.FromUnitPicker.Location = new System.Drawing.Point(155, 3);
             this.FromUnitPicker.Name = "FromUnitPicker";
@@ -136,7 +152,10 @@
             // 
             // ToUnitPicker
             // 
+            this.ToUnitPicker.BackColor = System.Drawing.Color.Gray;
+            this.ToUnitPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ToUnitPicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ToUnitPicker.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ToUnitPicker.FormattingEnabled = true;
             this.ToUnitPicker.Location = new System.Drawing.Point(307, 3);
             this.ToUnitPicker.Name = "ToUnitPicker";
@@ -147,7 +166,10 @@
             // InputBox
             // 
             this.InputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.InputBox.BackColor = System.Drawing.Color.Gray;
+            this.InputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.InputBox.Location = new System.Drawing.Point(155, 93);
             this.InputBox.Name = "InputBox";
             this.InputBox.Size = new System.Drawing.Size(146, 21);
@@ -157,27 +179,39 @@
             // OutputBox
             // 
             this.OutputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.OutputBox.BackColor = System.Drawing.Color.DarkGray;
+            this.OutputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OutputBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.OutputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputBox.ForeColor = System.Drawing.SystemColors.Window;
             this.OutputBox.Location = new System.Drawing.Point(307, 93);
             this.OutputBox.Name = "OutputBox";
             this.OutputBox.ReadOnly = true;
             this.OutputBox.Size = new System.Drawing.Size(148, 21);
             this.OutputBox.TabIndex = 4;
+            this.OutputBox.TabStop = false;
             // 
             // ClearButton
             // 
+            this.ClearButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClearButton.FlatAppearance.BorderSize = 0;
+            this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearButton.Location = new System.Drawing.Point(155, 121);
+            this.ClearButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClearButton.Location = new System.Drawing.Point(156, 122);
+            this.ClearButton.Margin = new System.Windows.Forms.Padding(4);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(146, 25);
+            this.ClearButton.Size = new System.Drawing.Size(144, 23);
             this.ClearButton.TabIndex = 5;
             this.ClearButton.Text = "&Clear";
-            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // MainBoxMenuStrip
             // 
+            this.MainBoxMenuStrip.BackColor = System.Drawing.SystemColors.MenuBar;
             this.MainBoxMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.optionsToolStripMenuItem,
@@ -186,27 +220,55 @@
             this.MainBoxMenuStrip.Name = "MainBoxMenuStrip";
             this.MainBoxMenuStrip.Size = new System.Drawing.Size(464, 24);
             this.MainBoxMenuStrip.TabIndex = 1;
-            this.MainBoxMenuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.BackColor = System.Drawing.SystemColors.MenuBar;
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewUnitToolStripMenuItem,
+            this.deleteToolStripMenuItem,
             this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // addNewUnitToolStripMenuItem
+            // 
+            this.addNewUnitToolStripMenuItem.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.addNewUnitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addNewUnitToolStripMenuItem.Name = "addNewUnitToolStripMenuItem";
+            this.addNewUnitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.addNewUnitToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.addNewUnitToolStripMenuItem.Text = "Add &New Custom Unit...";
+            this.addNewUnitToolStripMenuItem.Click += new System.EventHandler(this.addNewUnitToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.deleteToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.deleteToolStripMenuItem.Text = "&Delete Custom Unit";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
+            this.optionsToolStripMenuItem.BackColor = System.Drawing.SystemColors.MenuBar;
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.keepWindowFloatingToolStripMenuItem,
+            this.separatorToolStripMenuItem,
             this.noRoundingOffToolStripMenuItem,
             this.wholeNumberToolStripMenuItem,
             this.decimalPlacesToolStripMenuItem1,
@@ -219,14 +281,34 @@
             this.decimalPlacesToolStripMenuItem8,
             this.decimalPlacesToolStripMenuItem9,
             this.decimalPlacesToolStripMenuItem10});
+            this.optionsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
+            // keepWindowFloatingToolStripMenuItem
+            // 
+            this.keepWindowFloatingToolStripMenuItem.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.keepWindowFloatingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.keepWindowFloatingToolStripMenuItem.Name = "keepWindowFloatingToolStripMenuItem";
+            this.keepWindowFloatingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
+            this.keepWindowFloatingToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.keepWindowFloatingToolStripMenuItem.Text = "Keep &Window Floating";
+            this.keepWindowFloatingToolStripMenuItem.Click += new System.EventHandler(this.keepWindowFloatingToolStripMenuItem_Click);
+            // 
+            // separatorToolStripMenuItem
+            // 
+            this.separatorToolStripMenuItem.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.separatorToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.separatorToolStripMenuItem.Name = "separatorToolStripMenuItem";
+            this.separatorToolStripMenuItem.Size = new System.Drawing.Size(231, 6);
+            // 
             // noRoundingOffToolStripMenuItem
             // 
+            this.noRoundingOffToolStripMenuItem.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.noRoundingOffToolStripMenuItem.Checked = true;
             this.noRoundingOffToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.noRoundingOffToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.noRoundingOffToolStripMenuItem.Name = "noRoundingOffToolStripMenuItem";
             this.noRoundingOffToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.N)));
@@ -236,6 +318,8 @@
             // 
             // wholeNumberToolStripMenuItem
             // 
+            this.wholeNumberToolStripMenuItem.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.wholeNumberToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.wholeNumberToolStripMenuItem.Name = "wholeNumberToolStripMenuItem";
             this.wholeNumberToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.W)));
@@ -245,6 +329,8 @@
             // 
             // decimalPlacesToolStripMenuItem1
             // 
+            this.decimalPlacesToolStripMenuItem1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem1.Name = "decimalPlacesToolStripMenuItem1";
             this.decimalPlacesToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D1)));
@@ -254,6 +340,8 @@
             // 
             // decimalPlacesToolStripMenuItem2
             // 
+            this.decimalPlacesToolStripMenuItem2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem2.Name = "decimalPlacesToolStripMenuItem2";
             this.decimalPlacesToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D2)));
@@ -263,6 +351,8 @@
             // 
             // decimalPlacesToolStripMenuItem3
             // 
+            this.decimalPlacesToolStripMenuItem3.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem3.Name = "decimalPlacesToolStripMenuItem3";
             this.decimalPlacesToolStripMenuItem3.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D3)));
@@ -272,6 +362,8 @@
             // 
             // decimalPlacesToolStripMenuItem4
             // 
+            this.decimalPlacesToolStripMenuItem4.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem4.Name = "decimalPlacesToolStripMenuItem4";
             this.decimalPlacesToolStripMenuItem4.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D4)));
@@ -281,6 +373,8 @@
             // 
             // decimalPlacesToolStripMenuItem5
             // 
+            this.decimalPlacesToolStripMenuItem5.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem5.Name = "decimalPlacesToolStripMenuItem5";
             this.decimalPlacesToolStripMenuItem5.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D5)));
@@ -290,6 +384,8 @@
             // 
             // decimalPlacesToolStripMenuItem6
             // 
+            this.decimalPlacesToolStripMenuItem6.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem6.Name = "decimalPlacesToolStripMenuItem6";
             this.decimalPlacesToolStripMenuItem6.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D6)));
@@ -299,6 +395,8 @@
             // 
             // decimalPlacesToolStripMenuItem7
             // 
+            this.decimalPlacesToolStripMenuItem7.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem7.Name = "decimalPlacesToolStripMenuItem7";
             this.decimalPlacesToolStripMenuItem7.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D7)));
@@ -308,6 +406,8 @@
             // 
             // decimalPlacesToolStripMenuItem8
             // 
+            this.decimalPlacesToolStripMenuItem8.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem8.Name = "decimalPlacesToolStripMenuItem8";
             this.decimalPlacesToolStripMenuItem8.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D8)));
@@ -317,6 +417,8 @@
             // 
             // decimalPlacesToolStripMenuItem9
             // 
+            this.decimalPlacesToolStripMenuItem9.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem9.Name = "decimalPlacesToolStripMenuItem9";
             this.decimalPlacesToolStripMenuItem9.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D9)));
@@ -326,6 +428,8 @@
             // 
             // decimalPlacesToolStripMenuItem10
             // 
+            this.decimalPlacesToolStripMenuItem10.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.decimalPlacesToolStripMenuItem10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.decimalPlacesToolStripMenuItem10.Name = "decimalPlacesToolStripMenuItem10";
             this.decimalPlacesToolStripMenuItem10.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.O)));
@@ -335,16 +439,21 @@
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.BackColor = System.Drawing.SystemColors.MenuBar;
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutUnitConverterToolStripMenuItem});
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "&About";
             // 
             // aboutUnitConverterToolStripMenuItem
             // 
+            this.aboutUnitConverterToolStripMenuItem.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.aboutUnitConverterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.aboutUnitConverterToolStripMenuItem.Name = "aboutUnitConverterToolStripMenuItem";
-            this.aboutUnitConverterToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.aboutUnitConverterToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.aboutUnitConverterToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.aboutUnitConverterToolStripMenuItem.Text = "&About Unit Converter";
             this.aboutUnitConverterToolStripMenuItem.Click += new System.EventHandler(this.aboutUnitConverterToolStripMenuItem_Click);
             // 
@@ -358,10 +467,12 @@
             // 
             // GlobalArea
             // 
+            this.GlobalArea.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.GlobalArea.ColumnCount = 1;
             this.GlobalArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.GlobalArea.Controls.Add(this.MainArea, 0, 0);
             this.GlobalArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GlobalArea.ForeColor = System.Drawing.SystemColors.Window;
             this.GlobalArea.Location = new System.Drawing.Point(0, 24);
             this.GlobalArea.Name = "GlobalArea";
             this.GlobalArea.RowCount = 1;
@@ -374,11 +485,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(464, 201);
             this.Controls.Add(this.GlobalArea);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MainBoxMenuStrip);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MainMenuStrip = this.MainBoxMenuStrip;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(720, 400);
             this.MinimumSize = new System.Drawing.Size(480, 240);
             this.Name = "WinFormsFrontEnd";
@@ -423,6 +537,10 @@
         private System.Windows.Forms.ToolStripMenuItem aboutUnitConverterToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.TableLayoutPanel GlobalArea;
+        private System.Windows.Forms.ToolStripMenuItem addNewUnitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem keepWindowFloatingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator separatorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 

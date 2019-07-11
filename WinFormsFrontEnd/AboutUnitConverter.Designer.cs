@@ -110,7 +110,10 @@
             // 
             // textBoxDescription
             // 
+            this.textBoxDescription.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBoxDescription.Location = new System.Drawing.Point(6, 107);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.textBoxDescription.Multiline = true;
@@ -125,21 +128,28 @@
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.BackColor = System.Drawing.Color.Gray;
+            this.okButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.okButton.FlatAppearance.BorderSize = 0;
+            this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.okButton.Location = new System.Drawing.Point(288, 236);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 24);
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&OK";
+            this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // AboutUnitConverter
             // 
-            this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.CancelButton = this.okButton;
             this.ClientSize = new System.Drawing.Size(384, 281);
             this.Controls.Add(this.tableLayoutPanel);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

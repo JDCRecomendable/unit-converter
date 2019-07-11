@@ -17,6 +17,11 @@ namespace UnitConverter
             PreDefinedUnitsLoader.LoadAllPreDefinedUnits(unitManipulator);
         }
 
+        public Unit GetUnitByName(int quantityIndex, string unitName)
+        {
+            return unitManipulator.GetUnitByName(quantityIndex, unitName);
+        }
+
         public double CalculateByUnitName(double value, string fromUnitString, string toUnitString, int quantityIndex)
         {
             Unit fromUnit = unitManipulator.GetUnitByName(quantityIndex, fromUnitString);
@@ -40,6 +45,14 @@ namespace UnitConverter
             calculationHandler.SetRoundOffValue(value);
         }
 
+        /// <summary>
+        /// <para>Pass in scope = 0 when only wanting to list pre-defined units.</para>
+        /// <para>Pass in scope = 1 when only wanting to list custom units.</para>
+        /// <para>Pass in scope = -1 or leave empty when wanting to get all units.</para>
+        /// </summary>
+        /// <param name="quantityIndex"></param>
+        /// <param name="scope"></param>
+        /// <returns></returns>
         public List<string> GetUnitsNamesForQuantity(int quantityIndex, short scope=-1)
         {
             List<string> resultList = new List<string>();
@@ -88,21 +101,6 @@ namespace UnitConverter
         public void RemoveUnit(int quantityIndex, Unit unit)
         {
             unitManipulator.RemoveUnit(quantityIndex, unit);
-        }
-
-        public void RemoveUnitsByName(int quantityIndex, List<string> unitNames)
-        {
-            List<Unit> unitList = new List<Unit>();
-
-            foreach (string unitName in unitNames)
-                unitList.Add(unitManipulator.GetUnitByName(quantityIndex, unitName));
-
-            RemoveUnits(quantityIndex, unitList);
-        }
-
-        public void RemoveUnits(int quantityIndex, List<Unit> units)
-        {
-            unitManipulator.RemoveUnits(quantityIndex, units);
         }
     }
 }
