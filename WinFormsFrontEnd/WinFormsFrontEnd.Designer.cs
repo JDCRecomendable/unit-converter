@@ -58,10 +58,12 @@
             this.decimalPlacesToolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutUnitConverterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusBar = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.GlobalArea = new System.Windows.Forms.TableLayoutPanel();
             this.MainArea.SuspendLayout();
             this.MainBoxMenuStrip.SuspendLayout();
+            this.StatusBar.SuspendLayout();
             this.GlobalArea.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,6 +149,7 @@
             this.FromUnitPicker.Location = new System.Drawing.Point(155, 3);
             this.FromUnitPicker.Name = "FromUnitPicker";
             this.FromUnitPicker.Size = new System.Drawing.Size(146, 83);
+            this.FromUnitPicker.Sorted = true;
             this.FromUnitPicker.TabIndex = 1;
             this.FromUnitPicker.SelectedIndexChanged += new System.EventHandler(this.FromUnitPicker_SelectedIndexChanged);
             // 
@@ -160,13 +163,14 @@
             this.ToUnitPicker.Location = new System.Drawing.Point(307, 3);
             this.ToUnitPicker.Name = "ToUnitPicker";
             this.ToUnitPicker.Size = new System.Drawing.Size(148, 83);
+            this.ToUnitPicker.Sorted = true;
             this.ToUnitPicker.TabIndex = 2;
             this.ToUnitPicker.SelectedIndexChanged += new System.EventHandler(this.ToUnitPicker_SelectedIndexChanged);
             // 
             // InputBox
             // 
             this.InputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.InputBox.BackColor = System.Drawing.Color.Gray;
+            this.InputBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.InputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -179,7 +183,7 @@
             // OutputBox
             // 
             this.OutputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutputBox.BackColor = System.Drawing.Color.DarkGray;
+            this.OutputBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.OutputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OutputBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.OutputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -457,13 +461,22 @@
             this.aboutUnitConverterToolStripMenuItem.Text = "&About Unit Converter";
             this.aboutUnitConverterToolStripMenuItem.Click += new System.EventHandler(this.aboutUnitConverterToolStripMenuItem_Click);
             // 
-            // statusStrip1
+            // StatusBar
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 179);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(464, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.StatusBar.BackColor = System.Drawing.Color.Transparent;
+            this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel});
+            this.StatusBar.Location = new System.Drawing.Point(0, 179);
+            this.StatusBar.Name = "StatusBar";
+            this.StatusBar.Size = new System.Drawing.Size(464, 22);
+            this.StatusBar.TabIndex = 2;
+            this.StatusBar.Text = "statusStrip1";
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(88, 17);
+            this.StatusLabel.Text = "Status Message";
             // 
             // GlobalArea
             // 
@@ -488,7 +501,7 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(464, 201);
             this.Controls.Add(this.GlobalArea);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.MainBoxMenuStrip);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MainMenuStrip = this.MainBoxMenuStrip;
@@ -501,6 +514,8 @@
             this.MainArea.PerformLayout();
             this.MainBoxMenuStrip.ResumeLayout(false);
             this.MainBoxMenuStrip.PerformLayout();
+            this.StatusBar.ResumeLayout(false);
+            this.StatusBar.PerformLayout();
             this.GlobalArea.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -535,12 +550,13 @@
         private System.Windows.Forms.ToolStripMenuItem decimalPlacesToolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutUnitConverterToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.TableLayoutPanel GlobalArea;
         private System.Windows.Forms.ToolStripMenuItem addNewUnitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keepWindowFloatingToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator separatorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
     }
 }
 

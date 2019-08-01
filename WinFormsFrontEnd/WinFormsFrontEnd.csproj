@@ -66,6 +66,7 @@
     <Compile Include="DeleteCustomUnit.Designer.cs">
       <DependentUpon>DeleteCustomUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatusBarController.cs" />
     <Compile Include="WinFormsFrontEnd.cs">
       <SubType>Form</SubType>
     </Compile>

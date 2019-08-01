@@ -6,17 +6,20 @@ namespace UnitConverter
 {
     public partial class WinFormsFrontEnd : Form
     {
+        // Initialise Variables
         private UnitConverterProgram unitConverterProgram = new UnitConverterProgram();
+        private StatusBarController statusBarController;
         private int quantitySelected = 0;
         List<ToolStripMenuItem> roundOffMenuItems = new List<ToolStripMenuItem>();
 
+        // Initialise Object
         public WinFormsFrontEnd()
         {
             InitializeComponent();
+            statusBarController = new StatusBarController(StatusBar, StatusLabel);
             QuantityPicker.SelectedIndex = 0;
-            UpdateComboBoxes();
-
             MainBoxMenuStrip.Renderer = new SelectorColourRenderer();
+            UpdateComboBoxes();
 
             roundOffMenuItems.Add(noRoundingOffToolStripMenuItem);
             roundOffMenuItems.Add(wholeNumberToolStripMenuItem);
@@ -32,41 +35,56 @@ namespace UnitConverter
             roundOffMenuItems.Add(decimalPlacesToolStripMenuItem10);
         }
 
-        private void ToggleKeepFloating()
-        {
-            if (this.TopMost)
-            {
-                this.TopMost = false;
-                keepWindowFloatingToolStripMenuItem.Checked = false;
-            }
-            else
-            {
-                this.TopMost = true;
-                keepWindowFloatingToolStripMenuItem.Checked = true;
-            }
-        }
-
-        private void UntickAllRoundOffMenuItems()
-        {
-            foreach (ToolStripMenuItem menuItem in roundOffMenuItems)
-                menuItem.Checked = false;
-        }
-
+        // Main GUI-Calculation Function: Get quantity currently selected by user
         private int GetQuantitySelected()
         {
             return quantitySelected;
         }
 
+        // Main GUI-Calculation Function: Set quantity newly selected by user
         private void SetQuantitySelected(int value)
         {
             quantitySelected = value;
         }
 
+        // Main GUI-Calculation Function: Set round-off setting
         private void SetRoundOffValue(short value)
         {
             unitConverterProgram.SetRoundOffValue(value);
         }
 
+        // Main GUI-Calculation Function: Perform unit conversion
+        private void Calculate()
+        {
+            string fromUnitName = (string)FromUnitPicker.SelectedItem;
+            string toUnitName = (string)ToUnitPicker.SelectedItem;
+            bool canParse = double.TryParse(InputBox.Text, out double inputValue);
+
+            if (canParse)
+            {
+                double result = unitConverterProgram.CalculateByUnitName(
+                    inputValue,
+                    fromUnitName,
+                    toUnitName,
+                    GetQuantitySelected()
+                );
+                OutputBox.Text = result.ToString();
+                statusBarController.SetToDone();
+            }
+            else if (string.IsNullOrWhiteSpace(InputBox.Text))
+            {
+                OutputBox.Text = "0";
+                statusBarController.SetToReady();
+            }
+
+            else
+            {
+                OutputBox.Text = "0";
+                statusBarController.SetToInvalidInput();
+            }
+        }
+
+        // Main GUI Function: Update combo boxes with units from the quantity selected
         public void UpdateComboBoxes()
         {
             List<string> unitNames = unitConverterProgram.GetUnitsNamesForQuantity(GetQuantitySelected());
@@ -84,6 +102,14 @@ namespace UnitConverter
             ToUnitPicker.SelectedIndex = 1;
         }
 
+        // Main GUI Function: Clear input box
+        private void ClearAll()
+        {
+            InputBox.Text = "";
+            statusBarController.SetToReady();
+        }
+
+        // Main GUI Function: Detect if selected quantity has changed
         private void QuantityPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetQuantitySelected(QuantityPicker.SelectedIndex);
@@ -91,40 +117,31 @@ namespace UnitConverter
             ClearAll();
         }
 
-        private void Calculate()
-        {
-            string fromUnitName = (string)FromUnitPicker.SelectedItem;
-            string toUnitName = (string)ToUnitPicker.SelectedItem;
-            double.TryParse(InputBox.Text, out double inputValue);
-            double result = unitConverterProgram.CalculateByUnitName(inputValue, fromUnitName, toUnitName, GetQuantitySelected());
-            OutputBox.Text = result.ToString();
-        }
-
+        // Main GUI Function: Detect if input value has changed
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
             Calculate();
         }
 
+        // Main GUI Function: Detect if selected toUnit has changed
         private void FromUnitPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calculate();
         }
 
+        // Main GUI Function: Detect if selected fromUnit has changed
         private void ToUnitPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calculate();
         }
 
-        private void ClearAll()
-        {
-            InputBox.Text = "";
-        }
-
+        // Button: Clear
         private void ClearButton_Click(object sender, EventArgs e)
         {
             ClearAll();
         }
 
+        // Button: Swap
         private void SwapButton_Click(object sender, EventArgs e)
         {
             int temp = FromUnitPicker.SelectedIndex;
@@ -132,115 +149,130 @@ namespace UnitConverter
             ToUnitPicker.SelectedIndex = temp;
         }
 
+        // Main GUI Function: Toggle Keep Floating option & Tick/untick corresponding menu item
+        private void ToggleKeepFloating()
+        {
+            if (this.TopMost)
+            {
+                this.TopMost = false;
+                keepWindowFloatingToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                this.TopMost = true;
+                keepWindowFloatingToolStripMenuItem.Checked = true;
+            }
+
+            statusBarController.SetToSettingUpdated();
+        }
+
+        // Helper Menu Item: Remove tick fro all round-off menu items
+        private void UntickAllRoundOffMenuItems()
+        {
+            foreach (ToolStripMenuItem menuItem in roundOffMenuItems)
+                menuItem.Checked = false;
+        }
+
+        // Helper Menu Item: Do when round-off menu item is clicked
+        private void RoundOffMenuItemClicked(short roundOffValue)
+        {
+            UntickAllRoundOffMenuItems();
+            SetRoundOffValue(roundOffValue);
+            Calculate();
+            statusBarController.SetToRoundOffValueSet();
+        }
+
+        // Menu Item: Options - Set Round-Off setting to none (i.e. do not round off)
         private void noRoundingOffToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(-1);
+            RoundOffMenuItemClicked(-1);
             noRoundingOffToolStripMenuItem.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to whole number
         private void wholeNumberToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(0);
+            RoundOffMenuItemClicked(0);
             wholeNumberToolStripMenuItem.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 1 d.p.
         private void decimalPlacesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(1);
+            RoundOffMenuItemClicked(1);
             decimalPlacesToolStripMenuItem1.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 2 d.p.
         private void decimalPlacesToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(2);
+            RoundOffMenuItemClicked(2);
             decimalPlacesToolStripMenuItem2.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 3 d.p.
         private void decimalPlacesToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(3);
+            RoundOffMenuItemClicked(3);
             decimalPlacesToolStripMenuItem3.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 4 d.p.
         private void decimalPlacesToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(4);
+            RoundOffMenuItemClicked(4);
             decimalPlacesToolStripMenuItem4.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 5 d.p.
         private void decimalPlacesToolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(5);
+            RoundOffMenuItemClicked(5);
             decimalPlacesToolStripMenuItem5.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 6 d.p.
         private void decimalPlacesToolStripMenuItem6_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(6);
+            RoundOffMenuItemClicked(6);
             decimalPlacesToolStripMenuItem6.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 7 d.p.
         private void decimalPlacesToolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(7);
+            RoundOffMenuItemClicked(7);
             decimalPlacesToolStripMenuItem7.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 8 d.p.
         private void decimalPlacesToolStripMenuItem8_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(8);
+            RoundOffMenuItemClicked(8);
             decimalPlacesToolStripMenuItem8.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 9 d.p.
         private void decimalPlacesToolStripMenuItem9_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(9);
+            RoundOffMenuItemClicked(9);
             decimalPlacesToolStripMenuItem9.Checked = true;
-            Calculate();
         }
 
+        // Menu Item: Options - Set Round-Off setting to 10 d.p.
         private void decimalPlacesToolStripMenuItem10_Click(object sender, EventArgs e)
         {
-            UntickAllRoundOffMenuItems();
-            SetRoundOffValue(10);
+            RoundOffMenuItemClicked(10);
             decimalPlacesToolStripMenuItem10.Checked = true;
-            Calculate();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        // Menu Item: Options - Kepp window floating
+        private void keepWindowFloatingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ToggleKeepFloating();
         }
 
-        private void aboutUnitConverterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutUnitConverter aboutUnitConverter = new AboutUnitConverter();
-            if (this.TopMost)
-                aboutUnitConverter.TopMost = true;
-            aboutUnitConverter.Show();
-        }
-
+        // Menu Item: File - Add new custom unit
         private void addNewUnitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddNewUnit addNewUnit = new AddNewUnit(this, unitConverterProgram);
@@ -249,11 +281,7 @@ namespace UnitConverter
             addNewUnit.Show();
         }
 
-        private void keepWindowFloatingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToggleKeepFloating();
-        }
-
+        // Menu Item: File - Delete existing custom unit
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteCustomUnit deleteCustomUnit = new DeleteCustomUnit(this, unitConverterProgram);
@@ -262,12 +290,27 @@ namespace UnitConverter
             deleteCustomUnit.Show();
         }
 
+        // Menu Item: File - Exit the application
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // Menu Item: About
+        private void aboutUnitConverterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutUnitConverter aboutUnitConverter = new AboutUnitConverter();
+            if (this.TopMost)
+                aboutUnitConverter.TopMost = true;
+            aboutUnitConverter.Show();
+        }
+
+        // Miscellaneous: For menu bar rendering
         private class SelectorColourRenderer : ToolStripProfessionalRenderer
         {
             public SelectorColourRenderer() : base(new SelectorColours()) { }
         }
 
-        // MISC - For menu bar rendering
         private class SelectorColours : ProfessionalColorTable
         {
             public override System.Drawing.Color MenuItemSelected

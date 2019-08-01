@@ -110,7 +110,7 @@
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textBoxDescription.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
