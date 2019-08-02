@@ -2,6 +2,11 @@
 Improved version of the Avondale College, Auckland project:
 https://github.com/JDCRecomendable/unit-converter-old
 
+## Preamble
+This project is the product of a project required by the NCEA Curriculum,
+Standard AS91906. This project was overseen by teachers from Avondale
+College, Auckland.
+
 ## About
 Unit Converter is a cross-platform unit conversion software project that aims
 to provide a streamlined interface for unit conversion for students, scientists
@@ -20,9 +25,6 @@ values to the S.I. unit of their physical quantities.
 GNU General Public License Version 3  
 The program is provided with ABSOLUTELY NO WARRANTY, EXPRESS OR IMPLIED.
 
-The source code is available on:  
-https://github.com/JDCRecomendable/unit-converter
-
 ## Caveats
 * The Cocoa-based front-end for macOS is not complete.
 * The GTK-based front-end for GNU/Linux, though providing the minimum
@@ -31,7 +33,7 @@ Windows-Forms based front-end for Windows.
 * Custom units at the moment cannot be saved and will have to be manually added
 at the next launch.
 
-## Future Directions (possible given more time)
+## Future Directions
 * Bring macOS and GNU/Linux front-ends to be on par with the Windows front-end.
 * Allow custom units to be saved by the program and loaded automatically on
 start-up without user intervention.
@@ -43,7 +45,7 @@ processed by the program.
 * Core
 * GTK# Front-End for GNU/Linux
 * WinForms for Windows
-* [proposed] Cocoa for macOS
+* Cocoa for macOS
 
 ## Running the Compiled Binaries
 ### GNU/Linux
