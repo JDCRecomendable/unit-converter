@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,8 +7,9 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>UnitConverter</RootNamespace>
     <AssemblyName>UnitConverter</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Owners>Jared Daniel Carbonell Recomendable</Owners>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,12 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Interactables\" />
-    <Folder Include="Resources\Classes\" />
-    <Folder Include="Resources\Definitions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="Interactables\DomainLogic.cs" />
     <Compile Include="Resources\Classes\UnitClass.cs" />
@@ -41,6 +37,9 @@
     <Compile Include="Resources\Definitions\QuantityDefinitions.cs" />
     <Compile Include="Resources\Classes\UnitManipulators.cs" />
     <Compile Include="Resources\Classes\CalculationHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
