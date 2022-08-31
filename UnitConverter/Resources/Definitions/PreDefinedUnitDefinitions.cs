@@ -76,7 +76,7 @@
             unitManipulator._AddUnit(QuantityIndex.time, new Unit("Second [s] (S.I. Unit)", 1d, 0d));
             unitManipulator._AddUnit(QuantityIndex.time, new Unit("Millisecond [ms]", 0.001d, 0d));
             unitManipulator._AddUnit(QuantityIndex.time, new Unit("Microsecond [μs]", 0.000001d, 0d));
-            unitManipulator._AddUnit(QuantityIndex.time, new Unit("Nanosecond [ns]", 000000001d, 0d));
+            unitManipulator._AddUnit(QuantityIndex.time, new Unit("Nanosecond [ns]", 0.00000001d, 0d));
             unitManipulator._AddUnit(QuantityIndex.time, new Unit("Minute [min]", 60d, 0d));
             unitManipulator._AddUnit(QuantityIndex.time, new Unit("Hour [h]", 3600d, 0d));
             unitManipulator._AddUnit(QuantityIndex.time, new Unit("Day", 86400d, 0d));
