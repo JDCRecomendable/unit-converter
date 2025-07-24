@@ -67,9 +67,9 @@
             unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Gallon (Imperial)", (1d / 219.969248299088d), 0d));
             unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Quart (Imperial)", ((1d / 219.969248299088d) / 4d), 0d));
             unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Pint (Imperial)", ((1d / 219.969248299088d) / 8d), 0d));
-            unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Cup (US Customary)", 4226.75283773038d, 0d));
-            unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Tablespoon (US Customary)", (4226.75283773038d / 16d), 0d));
-            unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Teaspoon (US Customary)", (4226.75283773038d / 48d), 0d));
+            unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Cup (US Customary)", (1d / 4226.75283773038d), 0d));
+            unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Tablespoon (US Customary)", ((1d / 4226.75283773038d) / 16d), 0d));
+            unitManipulator._AddUnit(QuantityIndex.volume, new Unit("Teaspoon (US Customary)", ((1d / 4226.75283773038d) / 48d), 0d));
 
 
             // Time (11 units)
