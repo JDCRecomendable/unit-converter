@@ -15,7 +15,8 @@ namespace UnitConverter
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(true);
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.Run(new WinFormsFrontEnd());
         }
     }
