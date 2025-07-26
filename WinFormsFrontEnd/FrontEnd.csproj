@@ -4,7 +4,31 @@
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Title>Unit Converter</Title>
+    <Authors>Jared Recomendable</Authors>
+    <Company>JDCR Design</Company>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/JDCRecomendable/unit-converter</RepositoryUrl>
+    <Description>This is the product of a project for the Technology (Innovation Programme) in Avondale College, Auckland.
+
+Unit Converter is a cross-platform program that converts values from one unit to another.
+
+The application converts units for 16 different quantities, supporting more than 370 units.
+
+This program is licensed under the GNU GPLv3. This program provides absolutely no warranty in any way and any form.
+
+The source code is available at: https://github.com/JDCRecomendable/unit-converter</Description>
+    <Copyright>Copyright © 2019–2025 Jared Recomendable</Copyright>
+    <PackageProjectUrl>https://github.com/JDCRecomendable/unit-converter</PackageProjectUrl>
+    <Version>1.1.0</Version>
+    <Product>Unit Converter</Product>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnitConverter\UnitConverter.csproj">
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>

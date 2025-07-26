@@ -4,6 +4,15 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Exe</OutputType>
     <Owners>Jared Daniel Carbonell Recomendable</Owners>
+    <Title>Unit Converter Core</Title>
+    <Version>1.1.0</Version>
+    <Authors>Jared Recomendable</Authors>
+    <Company>JDCR Design</Company>
+    <Copyright>Copyright © 2019–2025 Jared Recomendable</Copyright>
+    <PackageProjectUrl>https://github.com/JDCRecomendable/unit-converter</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/JDCRecomendable/unit-converter</RepositoryUrl>
+    <Product>Unit Converter Core</Product>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>bin\Debug</OutputPath>
@@ -13,4 +22,10 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\Release</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 </Project>
